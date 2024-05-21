@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1715603573,
-        "narHash": "sha256-1SeRSRJv/HJKBFoyTpJhmQNgHfETYp4vWkMq6vTAXU4=",
+        "lastModified": 1716264291,
+        "narHash": "sha256-tC3tLwlBptQBfNArN2xSZbn2NWrVKSTRYdZGmO8mnf8=",
         "owner": "nix-community",
         "repo": "flakelight",
-        "rev": "8477a65c0a9a48f447e018f74bfc548e38e2b6b5",
+        "rev": "6af2ed9b42017fbad21bab7b0a3f75dfeca56bf9",
         "type": "github"
       },
       "original": {
@@ -20,13 +20,62 @@
         "type": "github"
       }
     },
+    "keyd": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1714779529,
+        "narHash": "sha256-rPxC+amLHUM39aX03KIWClgz4oHtQZiQI6svEL2AzHA=",
+        "owner": "rvaiya",
+        "repo": "keyd",
+        "rev": "02c77af7861a28927cc948d93e5477198bc0c933",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rvaiya",
+        "repo": "keyd",
+        "type": "github"
+      }
+    },
+    "neovide": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1716221737,
+        "narHash": "sha256-nHHCvs+jXn6dAymqsy+/442aeZbzVOnDR+QnPp5d37o=",
+        "owner": "neovide",
+        "repo": "neovide",
+        "rev": "a5b5ae6f9016d0a3cdf3ec83c2e15bb4db0f54b6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "neovide",
+        "repo": "neovide",
+        "type": "github"
+      }
+    },
+    "neovide-skia": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1712927001,
+        "narHash": "sha256-zlHUJUXukE4CsXwwmVl3KHf9mnNPT8lC/ETEE15Gb4s=",
+        "owner": "rust-skia",
+        "repo": "skia",
+        "rev": "d0410d4e6f703f06f6adc2b3793b284aeb23b0e9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rust-skia",
+        "ref": "m124-0.72.3",
+        "repo": "skia",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1715867414,
-        "narHash": "sha256-cu4UEffKkBByyGR6CFs9XP6iSNsKTkq1r66DA5BkYnE=",
+        "lastModified": 1716190602,
+        "narHash": "sha256-xYRimrR0duWvokWQEvB87bSsICeCvvX9DxpUOzCfsDE=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "bf446f08bff6814b569265bef8374cfdd3d8f0e0",
+        "rev": "5a5ac83292c7842072318f57d68a48474f8bd34d",
         "type": "github"
       },
       "original": {
@@ -38,6 +87,9 @@
     "root": {
       "inputs": {
         "flakelight": "flakelight",
+        "keyd": "keyd",
+        "neovide": "neovide",
+        "neovide-skia": "neovide-skia",
         "nixpkgs": "nixpkgs"
       }
     }

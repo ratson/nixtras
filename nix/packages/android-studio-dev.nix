@@ -10,9 +10,9 @@ let
     inherit tiling_wm;
   };
 in
-  mkStudio {
-    channel = "dev";
-    pname = "android-studio-dev";
-    version = "2024.1.2.2";
-    sha256Hash = "sha256-nE31AsnieFwheu+T2M0N8fW8Vvj8jUQq03z93WAy2SI=";
-  }
+mkStudio {
+  channel = "dev";
+  pname = "android-studio-dev";
+  version = "2024.1.2.2";
+  sha256Hash = "sha256-nE31AsnieFwheu+T2M0N8fW8Vvj8jUQq03z93WAy2SI=";
+}
