@@ -84,6 +84,22 @@
         "type": "indirect"
       }
     },
+    "pidcat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1643654136,
+        "narHash": "sha256-exswTRhx89W22tynerd5Bg0Q4BxhV0KC05a+VCEqmL4=",
+        "owner": "JakeWharton",
+        "repo": "pidcat",
+        "rev": "61cd1ee1beabfa14eb5fbe21eb90c192d96aebc5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JakeWharton",
+        "repo": "pidcat",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flakelight": "flakelight",
@@ -91,6 +107,7 @@
         "neovide": "neovide",
         "neovide-skia": "neovide-skia",
         "nixpkgs": "nixpkgs",
+        "pidcat": "pidcat",
         "simple-mpv-webui": "simple-mpv-webui"
       }
     },
