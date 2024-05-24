@@ -27,5 +27,9 @@
       url = "github:rust-skia/skia/m124-0.72.3";
       flake = false;
     };
+    simple-mpv-webui = {
+      url = "github:open-dynaMIX/simple-mpv-webui";
+      flake = false;
+    };
   };
 }

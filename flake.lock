@@ -90,7 +90,24 @@
         "keyd": "keyd",
         "neovide": "neovide",
         "neovide-skia": "neovide-skia",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "simple-mpv-webui": "simple-mpv-webui"
+      }
+    },
+    "simple-mpv-webui": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1699355035,
+        "narHash": "sha256-oUtpqR9r1hq4U41P/n6QZQ5m4b4QWFmgGKCPC0c3dmc=",
+        "owner": "open-dynaMIX",
+        "repo": "simple-mpv-webui",
+        "rev": "3c753450dd827d11eb6b6b8ff926e55af850478d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "open-dynaMIX",
+        "repo": "simple-mpv-webui",
+        "type": "github"
       }
     }
   },
