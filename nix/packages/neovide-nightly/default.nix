@@ -30,7 +30,7 @@ rustPlatform.buildRustPackage.override { stdenv = clangStdenv; } rec {
 
   src = inputs.neovide;
 
-  cargoHash = "sha256-MB3yQ8f7eRvnKGMzuz1zDu0T8wHFjY925AcxD/qL4oM=";
+  cargoHash = "sha256-RctvjNcCakjgzIrr9N7koJxGkGvcch8apYy/pmTyn9U=";
 
   SKIA_SOURCE_DIR =
     let
