@@ -15,6 +15,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "nixpkgs/nixpkgs-unstable";
+    cmake-lint = {
+      url = "github:cmake-lint/cmake-lint";
+      flake = false;
+    };
     keyd = {
       url = "github:rvaiya/keyd";
       flake = false;

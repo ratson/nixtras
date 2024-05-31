@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "cmake-lint": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1715510348,
+        "narHash": "sha256-/OuWwerBlJynEibaYo+jkLpHt4x9GZrqMRJNxgrDBlM=",
+        "owner": "cmake-lint",
+        "repo": "cmake-lint",
+        "rev": "7c644095eb566fa805839ad53b733f7bcdb73032",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cmake-lint",
+        "repo": "cmake-lint",
+        "type": "github"
+      }
+    },
     "flakelight": {
       "inputs": {
         "nixpkgs": [
@@ -7,11 +23,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1716446665,
-        "narHash": "sha256-FxkF8+lR51wt+beQWoFkJlH5hIM1/6lpr7G3KcFnERA=",
+        "lastModified": 1716813191,
+        "narHash": "sha256-j3HyrKbPu7kd4+iM2tMksDjKMLbhXo9cQ54WN5QmZ7k=",
         "owner": "nix-community",
         "repo": "flakelight",
-        "rev": "8f33d9c4fb1d7d8afc3de9145e3304a40aed1479",
+        "rev": "5983f517f942b8ca177b678f3f102c8b56ab791c",
         "type": "github"
       },
       "original": {
@@ -23,11 +39,11 @@
     "keyd": {
       "flake": false,
       "locked": {
-        "lastModified": 1714779529,
-        "narHash": "sha256-rPxC+amLHUM39aX03KIWClgz4oHtQZiQI6svEL2AzHA=",
+        "lastModified": 1716853244,
+        "narHash": "sha256-0zlz4qlfj86LdzXPQFo8j8AUdLn2lScNXRGO7x4aHVg=",
         "owner": "rvaiya",
         "repo": "keyd",
-        "rev": "02c77af7861a28927cc948d93e5477198bc0c933",
+        "rev": "ce1bab682baf98396b957b4c7950c89413b4c96f",
         "type": "github"
       },
       "original": {
@@ -39,11 +55,11 @@
     "neovide": {
       "flake": false,
       "locked": {
-        "lastModified": 1716577622,
-        "narHash": "sha256-vN4LwJdVU0OWBuG7omDYY3Q6QZ2pTyCxWxFzv9Z1/6I=",
+        "lastModified": 1717036279,
+        "narHash": "sha256-VpeS14JtWrhMalj69ZwnUFc1CMKsxhiN+UQTKD+XHbU=",
         "owner": "neovide",
         "repo": "neovide",
-        "rev": "4d567d726ae8c2e89c6f4aa2a652766955bd0746",
+        "rev": "930128b3f0bc3cf443b742257192c585d85c39a4",
         "type": "github"
       },
       "original": {
@@ -71,11 +87,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1716619601,
-        "narHash": "sha256-9dUxZf8MOqJH3vjbhrz7LH4qTcnRsPSBU1Q50T7q/X8=",
+        "lastModified": 1717112898,
+        "narHash": "sha256-7R2ZvOnvd9h8fDd65p0JnB7wXfUvreox3xFdYWd1BnY=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "47e03a624662ce399e55c45a5f6da698fc72c797",
+        "rev": "6132b0f6e344ce2fe34fc051b72fb46e34f668e0",
         "type": "github"
       },
       "original": {
@@ -102,6 +118,7 @@
     },
     "root": {
       "inputs": {
+        "cmake-lint": "cmake-lint",
         "flakelight": "flakelight",
         "keyd": "keyd",
         "neovide": "neovide",
