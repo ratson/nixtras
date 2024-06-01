@@ -30,7 +30,7 @@ rustPlatform.buildRustPackage.override { stdenv = clangStdenv; } rec {
 
   src = inputs.neovide;
 
-  cargoHash = "sha256-538/LDE66wOUVDj/WOtA7h6YktNVc5iisSF8GD4GpYY=";
+  cargoLock.lockFile = "${src}/Cargo.lock";
 
   SKIA_SOURCE_DIR =
     let
@@ -40,8 +40,7 @@ rustPlatform.buildRustPackage.override { stdenv = clangStdenv; } rec {
         (lib.importJSON ./skia-externals.json));
     in
     runCommand "source" { } ''
-      cp -R ${repo} $out
-      chmod -R +w $out
+      cp -R --no-preserve=mode,ownership ${repo} $out
       ln -s ${externals} $out/third_party/externals
     ''
   ;
