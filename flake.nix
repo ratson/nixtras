@@ -43,5 +43,9 @@
       url = "github:open-dynaMIX/simple-mpv-webui";
       flake = false;
     };
+    svg-to-icons = {
+      url = "github:William-Owen/svg-to-icons";
+      flake = false;
+    };
   };
 }
