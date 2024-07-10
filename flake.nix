@@ -19,6 +19,10 @@
       url = "github:cmake-lint/cmake-lint";
       flake = false;
     };
+    conky = {
+      url = "github:brndnmtthws/conky";
+      flake = false;
+    };
     keyd = {
       url = "github:rvaiya/keyd";
       flake = false;

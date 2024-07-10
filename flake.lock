@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "conky": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1720095563,
+        "narHash": "sha256-kpViLmU6KIvRut1uNPd23YRNrwnaraTUaVHjsDhAMgI=",
+        "owner": "brndnmtthws",
+        "repo": "conky",
+        "rev": "61208fc9fbd0a8e8027b33caad8f5018766437ff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "brndnmtthws",
+        "repo": "conky",
+        "type": "github"
+      }
+    },
     "flakelight": {
       "inputs": {
         "nixpkgs": [
@@ -135,6 +151,7 @@
     "root": {
       "inputs": {
         "cmake-lint": "cmake-lint",
+        "conky": "conky",
         "flakelight": "flakelight",
         "keyd": "keyd",
         "neovide": "neovide",
