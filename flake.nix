@@ -32,7 +32,7 @@
       flake = false;
     };
     neovide-skia = {
-      url = "github:rust-skia/skia/m124-0.72.3";
+      url = "github:rust-skia/skia/m126-0.74.2";
       flake = false;
     };
     oama = {
