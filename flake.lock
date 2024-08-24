@@ -71,11 +71,11 @@
     "neovide": {
       "flake": false,
       "locked": {
-        "lastModified": 1721120750,
-        "narHash": "sha256-u10JxMvXC/FIobeolWJElBZuCiJ3xIUg4F0vLom7/S0=",
+        "lastModified": 1724446537,
+        "narHash": "sha256-Vs4P1ymC5xeny23NVLWFrS4WxvT9SlX/DaCIrxN87pY=",
         "owner": "neovide",
         "repo": "neovide",
-        "rev": "9c23c432b8105f39d9e9ddc2732d3350a0323cc9",
+        "rev": "8ed544a54446a91747cdb1092d81216affcc0a3f",
         "type": "github"
       },
       "original": {
