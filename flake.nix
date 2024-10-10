@@ -51,5 +51,9 @@
       url = "github:William-Owen/svg-to-icons";
       flake = false;
     };
+    swhkd = {
+      url = "github:waycrate/swhkd";
+      flake = false;
+    };
   };
 }
