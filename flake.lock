@@ -116,22 +116,6 @@
         "type": "indirect"
       }
     },
-    "oama": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1728419851,
-        "narHash": "sha256-PYvtw+oIvD/VtN8AW02lLCmfVpz4vt8TyPaEbzIKwps=",
-        "owner": "pdobsan",
-        "repo": "oama",
-        "rev": "d903808050cef9e7468ff35eb26a61ac44a1a558",
-        "type": "github"
-      },
-      "original": {
-        "owner": "pdobsan",
-        "repo": "oama",
-        "type": "github"
-      }
-    },
     "pidcat": {
       "flake": false,
       "locked": {
@@ -157,7 +141,6 @@
         "neovide": "neovide",
         "neovide-skia": "neovide-skia",
         "nixpkgs": "nixpkgs",
-        "oama": "oama",
         "pidcat": "pidcat",
         "simple-mpv-webui": "simple-mpv-webui",
         "svg-to-icons": "svg-to-icons",

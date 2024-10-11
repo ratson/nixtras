@@ -35,10 +35,6 @@
       url = "github:rust-skia/skia/m126-0.74.2";
       flake = false;
     };
-    oama = {
-      url = "github:pdobsan/oama";
-      flake = false;
-    };
     pidcat = {
       url = "github:JakeWharton/pidcat";
       flake = false;
