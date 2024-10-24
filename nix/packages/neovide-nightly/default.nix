@@ -5,6 +5,7 @@
 , fetchgit
 , runCommand
 , gn
+, neovim
 , ninja
 , makeWrapper
 , pkg-config
@@ -18,7 +19,7 @@
 , darwin
 , libglvnd
 , libxkbcommon
-, enableWayland ? stdenv.isLinux
+, enableWayland ? stdenv.hostPlatform.isLinux
 , wayland
 , inputs
 , inputVersion
@@ -53,19 +54,15 @@ rustPlatform.buildRustPackage.override { stdenv = clangStdenv; } rec {
     pkg-config
     python3 # skia
     removeReferencesTo
-  ] ++ lib.optionals stdenv.isDarwin [ xcbuild ];
+  ] ++ lib.optionals stdenv.hostPlatform.isDarwin [ xcbuild ];
 
-  # All tests passes but at the end cargo prints for unknown reason:
-  #   error: test failed, to rerun pass '--bin neovide'
-  # Increasing the loglevel did not help. In a nix-shell environment
-  # the failure do not occure.
-  doCheck = false;
+  nativeCheckInputs = [ neovim ];
 
   buildInputs = [
     SDL2
     fontconfig
     rustPlatform.bindgenHook
-  ] ++ lib.optionals stdenv.isDarwin [
+  ] ++ lib.optionals stdenv.hostPlatform.isDarwin [
     darwin.apple_sdk.frameworks.AppKit
   ];
 
@@ -89,7 +86,11 @@ rustPlatform.buildRustPackage.override { stdenv = clangStdenv; } rec {
         --prefix LD_LIBRARY_PATH : ${libPath}
     '';
 
-  postInstall = ''
+  postInstall = lib.optionalString stdenv.hostPlatform.isDarwin ''
+    mkdir -p $out/Applications
+    cp -r extra/osx/Neovide.app $out/Applications
+    ln -s $out/bin $out/Applications/Neovide.app/Contents/MacOS
+  '' + lib.optionalString stdenv.hostPlatform.isLinux ''
     for n in 16x16 32x32 48x48 256x256; do
       install -m444 -D "assets/neovide-$n.png" \
         "$out/share/icons/hicolor/$n/apps/neovide.png"
@@ -99,4 +100,13 @@ rustPlatform.buildRustPackage.override { stdenv = clangStdenv; } rec {
   '';
 
   disallowedReferences = [ SKIA_SOURCE_DIR ];
+
+  meta = with lib; {
+    description = "This is a simple graphical user interface for Neovim";
+    mainProgram = "neovide";
+    homepage = "https://github.com/neovide/neovide";
+    license = with licenses; [ mit ];
+    maintainers = with maintainers; [ ck3d ];
+    platforms = platforms.linux ++ [ "aarch64-darwin" ];
+  };
 }
