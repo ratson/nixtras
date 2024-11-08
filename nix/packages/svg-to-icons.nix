@@ -1,10 +1,15 @@
-{ lib, stdenv, inputs, imagemagick, makeWrapper, ... }:
+{ lib, fetchFromGitHub, stdenv, imagemagick, makeWrapper, ... }:
 
 stdenv.mkDerivation rec {
   pname = "svg-to-icons";
   version = "0.0.1";
 
-  src = inputs.svg-to-icons;
+  src = fetchFromGitHub {
+    owner = "William-Owen";
+    repo = "svg-to-icons";
+    rev = "9b0d89e0cf6de432294b195656b4ac750e3821e9";
+    hash = "sha256-H1H344ldyDeUui2j+sRWmEOIrTVltfljZ7wiYZe7reI=";
+  };
 
   nativeBuildInputs = [ makeWrapper ];
 

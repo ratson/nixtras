@@ -1,19 +1,23 @@
 { lib
+, fetchFromGitHub
 , pkg-config
 , rustPlatform
 , udev
-, inputs
-, inputVersion
 }:
 
 let
-  src = inputs.swhkd;
+  src = fetchFromGitHub {
+    owner = "waycrate";
+    repo = "swhkd";
+    rev = "533295f2c864544c9a3e8176f4d6a44402118df3";
+    hash = "sha256-EZcBmF1QZa3QBXSJXZXJCbLwBxmj1qjs9Ld/+7msP74=";
+  };
 in
 rustPlatform.buildRustPackage {
   inherit src;
 
   pname = "swhkd-nightly";
-  version = inputVersion src;
+  version = "1.2.1";
 
   cargoLock = {
     lockFile = "${src}/Cargo.lock";

@@ -1,4 +1,5 @@
 { lib
+, fetchFromGitHub
 , rustPlatform
 , clangStdenv
 , linkFarm
@@ -21,21 +22,32 @@
 , libxkbcommon
 , enableWayland ? stdenv.hostPlatform.isLinux
 , wayland
-, inputs
-, inputVersion
 }:
 
-rustPlatform.buildRustPackage.override { stdenv = clangStdenv; } rec {
-  pname = "neovide-nightly";
-  version = inputVersion inputs.neovide;
+let
+  src = fetchFromGitHub {
+    owner = "neovide";
+    repo = "neovide";
+    rev = "af35b8a5b48c3219766de6a2e1c48b405e4f3e15";
+    hash = "sha256-xE8HbFyOyfh196nK+4gRCvfnX0a6LlM0hqb1fgOYBiw=";
+  };
+in
+rustPlatform.buildRustPackage.override { stdenv = clangStdenv; } {
+  inherit src;
 
-  src = inputs.neovide;
+  pname = "neovide-nightly";
+  version = "0.13.3";
 
   cargoLock.lockFile = "${src}/Cargo.lock";
 
   SKIA_SOURCE_DIR =
     let
-      repo = inputs.neovide-skia;
+      repo = fetchFromGitHub {
+        owner = "rust-skia";
+        repo = "skia";
+        rev = "30afe801ddfa98ec2444f391fad1d27a82891e4c";
+        hash = "sha256-4l6ekAJy+pG27hBGT6A6LLRwbsyKinJf6PP6mMHwaAs=";
+      };
       externals = linkFarm "skia-externals" (lib.mapAttrsToList
         (name: value: { inherit name; path = fetchgit value; })
         (lib.importJSON ./skia-externals.json));
