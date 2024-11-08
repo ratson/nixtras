@@ -40,9 +40,9 @@ rustPlatform.buildRustPackage {
       -t $out/share/polkit-1/actions
   '';
 
-  meta = with lib; {
+  meta = {
     description = "Sxhkd clone for Wayland (works on TTY and X11 too)";
     homepage = "https://github.com/waycrate/swhkd";
-    license = licenses.bsd2;
+    license = lib.licenses.bsd2;
   };
 }

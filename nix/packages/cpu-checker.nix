@@ -15,10 +15,10 @@ stdenv.mkDerivation rec {
       --replace "/usr" "$out"
   '';
 
-  meta = with lib; {
+  meta = {
     homepage = "https://launchpad.net/cpu-checker";
     description = "Userspace tools for helping to evaluate the CPU (or BIOS) support for various features";
-    license = licenses.gpl3;
-    platforms = platforms.linux;
+    license = lib.licenses.gpl3;
+    platforms = lib.platforms.linux;
   };
 }

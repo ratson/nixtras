@@ -30,10 +30,10 @@ stdenv.mkDerivation rec {
       --prefix PATH : ${lib.makeBinPath [ imagemagick ]}
   '';
 
-  meta = with lib; {
+  meta = {
     homepage = "https://launchpad.net/cpu-checker";
     description = "Convert an SVG file into multiple PNG files";
-    license = licenses.mit;
+    license = lib.licenses.mit;
     mainProgram = "svg-to-icons";
   };
 }

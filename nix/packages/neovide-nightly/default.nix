@@ -31,15 +31,6 @@ let
     rev = "af35b8a5b48c3219766de6a2e1c48b405e4f3e15";
     hash = "sha256-xE8HbFyOyfh196nK+4gRCvfnX0a6LlM0hqb1fgOYBiw=";
   };
-in
-rustPlatform.buildRustPackage.override { stdenv = clangStdenv; } {
-  inherit src;
-
-  pname = "neovide-nightly";
-  version = "0.13.3";
-
-  cargoLock.lockFile = "${src}/Cargo.lock";
-
   SKIA_SOURCE_DIR =
     let
       repo = fetchFromGitHub {
@@ -57,6 +48,15 @@ rustPlatform.buildRustPackage.override { stdenv = clangStdenv; } {
       ln -s ${externals} $out/third_party/externals
     ''
   ;
+in
+rustPlatform.buildRustPackage.override { stdenv = clangStdenv; } {
+  inherit src SKIA_SOURCE_DIR;
+
+  pname = "neovide-nightly";
+  version = "0.13.3";
+
+  cargoLock.lockFile = "${src}/Cargo.lock";
+
 
   SKIA_GN_COMMAND = "${gn}/bin/gn";
   SKIA_NINJA_COMMAND = "${ninja}/bin/ninja";
@@ -113,12 +113,12 @@ rustPlatform.buildRustPackage.override { stdenv = clangStdenv; } {
 
   disallowedReferences = [ SKIA_SOURCE_DIR ];
 
-  meta = with lib; {
+  meta = {
     description = "This is a simple graphical user interface for Neovim";
     mainProgram = "neovide";
     homepage = "https://github.com/neovide/neovide";
-    license = with licenses; [ mit ];
-    maintainers = with maintainers; [ ck3d ];
-    platforms = platforms.linux ++ [ "aarch64-darwin" ];
+    license = lib.licenses.mit;
+    maintainers = [ lib.maintainers.ck3d ];
+    platforms = lib.platforms.linux ++ [ "aarch64-darwin" ];
   };
 }
