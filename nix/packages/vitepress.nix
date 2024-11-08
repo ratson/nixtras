@@ -27,4 +27,9 @@ buildNpmPackage rec {
     cp "${pkg-json}" ./package.json
     cp "${lockfile}" ./package-lock.json
   '';
+
+  meta = {
+    broken = true;
+    mainProgram = "vitepress";
+  };
 }
