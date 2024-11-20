@@ -28,8 +28,8 @@ let
   src = fetchFromGitHub {
     owner = "neovide";
     repo = "neovide";
-    rev = "624d85f22eaa68d20aa0a4fff6929cfbad035046";
-    hash = "sha256-LZ2g9kqu1g08a949p9ZFT8xAlj8+ipO7H83M1oyrHLg=";
+    rev = "f9e4f8e160f1d3dcc2a7c272ec2a4bad7568363c";
+    hash = "sha256-JedMppG2c/QqdR4kkEJLYTKsIgtowCfV18azPUnz/ME=";
   };
   SKIA_SOURCE_DIR =
     let
@@ -52,9 +52,11 @@ rustPlatform.buildRustPackage.override { stdenv = clangStdenv; } {
   inherit src SKIA_SOURCE_DIR;
 
   pname = "neovide-nightly";
-  version = "0.14.0";
+  version = "0.13.3-unstable-2024-11-20";
 
-  cargoLock.lockFile = "${src}/Cargo.lock";
+  cargoLock = {
+    lockFile = "${src}/Cargo.lock";
+  };
 
   SKIA_GN_COMMAND = "${gn}/bin/gn";
   SKIA_NINJA_COMMAND = "${ninja}/bin/ninja";
