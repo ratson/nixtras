@@ -8,8 +8,6 @@ in
 buildNpmPackage (outputs.lib.npmArgs {
   inherit fetchurl lib pname version;
 
-  package = "@frat/${pname}";
-
   hash = "sha256-ME4KZ17QY2F5fJucb7txY71wz0CF2w6rdnbl7qLPl08=";
   lock.url = "https://raw.githubusercontent.com/bcherny/json-schema-to-typescript/${rev}/package-lock.json";
   lock.hash = "sha256-Tljs6pJ21lw1y+kgzusH4LYN8nbRm+qbfrs35T/sfn0=";
