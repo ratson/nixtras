@@ -10,9 +10,9 @@ buildNpmPackage (outputs.lib.npmArgs {
   package = "@frat/${pname}";
 
   hash = "sha256-z1GDzX5v5ugYSzj3SV/Vlva3X/HcZPIRsZGdESfRCU8=";
-  lock.hash = "sha256-+4mtuoe/Jqt9/TEqp4AFJsK4yBM8cJ36H7rkOnvyRnM=";
+  lock.hash = "sha256-U+Elmv8D4W2xi1zzdqk20yO9XEx7Uohv4GvZiY9ck2w=";
 
-  npmDepsHash = "sha256-Pp+8Ib3ilyzYX5Pn2TVkCLcN6nTWzViI5BIhN3zVCFU=";
+  npmDepsHash = "sha256-EjY0DtAEcWbrOAJbzQS2yhEEXXD01OeSVp+0O4vmWJM=";
 
   meta = {
     mainProgram = "markdown-toc";
