@@ -1,4 +1,11 @@
-{ lib, fetchFromGitHub, stdenv, imagemagick, makeWrapper, ... }:
+{
+  lib,
+  fetchFromGitHub,
+  stdenv,
+  imagemagick,
+  makeWrapper,
+  ...
+}:
 
 stdenv.mkDerivation rec {
   pname = "svg-to-icons";

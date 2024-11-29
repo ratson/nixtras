@@ -1,8 +1,9 @@
-{ lib
-, fetchFromGitHub
-, pkg-config
-, rustPlatform
-, udev
+{
+  lib,
+  fetchFromGitHub,
+  pkg-config,
+  rustPlatform,
+  udev,
 }:
 
 let

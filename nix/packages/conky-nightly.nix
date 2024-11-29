@@ -1,4 +1,9 @@
-{ fetchFromGitHub, inputs', gperf, ... }:
+{
+  fetchFromGitHub,
+  inputs',
+  gperf,
+  ...
+}:
 
 let
   version = "1.21.8";

@@ -1,4 +1,9 @@
-{ stdenv, lib, fetchbzr, ... }:
+{
+  stdenv,
+  lib,
+  fetchbzr,
+  ...
+}:
 
 stdenv.mkDerivation rec {
   pname = "cpu-checker";

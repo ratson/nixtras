@@ -1,4 +1,12 @@
-{ fetchFromGitHub, stdenv, installShellFiles, lib, python312, android-tools, ... }:
+{
+  fetchFromGitHub,
+  stdenv,
+  installShellFiles,
+  lib,
+  python312,
+  android-tools,
+  ...
+}:
 
 stdenv.mkDerivation rec {
   pname = "pidcat";
