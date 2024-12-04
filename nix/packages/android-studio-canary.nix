@@ -19,6 +19,6 @@ in
 mkStudio {
   channel = "canary";
   pname = "android-studio-canary";
-  version = "2024.3.1.3";
-  sha256Hash = "sha256-b6HEwHSnNm9ltrfWFepjqoxWQG5Awa3oxlBKeZKnv2g=";
+  version = "2024.3.1.4";
+  sha256Hash = "sha256-UJI7ouYPydOj0YE8SYN2UP+V1LXMt6QdjIwsq9D2mtA=";
 }
