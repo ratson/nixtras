@@ -3,6 +3,10 @@
     { conflake, ... }@inputs:
     conflake ./. {
       inherit inputs;
+
+      _module.args = {
+        sources = conflake.lib.flake.lock2inputs ./sources/flake.lock;
+      };
     };
 
   inputs = {
