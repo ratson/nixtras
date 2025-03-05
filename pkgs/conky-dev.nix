@@ -1,14 +1,14 @@
 {
   fetchFromGitHub,
-  inputs',
   gperf,
+  pkgs',
   ...
 }:
 
 let
   version = "1.21.8";
 in
-inputs'.nixpkgs.legacyPackages.conky.overrideAttrs (oldAttrs: {
+pkgs'.conky.overrideAttrs (prev: {
   inherit version;
 
   src = fetchFromGitHub {
@@ -18,5 +18,5 @@ inputs'.nixpkgs.legacyPackages.conky.overrideAttrs (oldAttrs: {
     hash = "sha256-bKWy/vWqHXqE3q8N3V6HV7/EKIOZ7CwTHgQ8btYkOvM=";
   };
 
-  nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ gperf ];
+  nativeBuildInputs = prev.nativeBuildInputs ++ [ gperf ];
 })

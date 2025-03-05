@@ -2,7 +2,7 @@
   lib,
   buildNpmPackage,
   fetchurl,
-  outputs,
+  inputs,
   ...
 }:
 
@@ -11,7 +11,7 @@ let
   version = "1.3.0";
 in
 buildNpmPackage (
-  outputs.lib.npmArgs {
+  inputs.self.lib.npmArgs {
     inherit
       fetchurl
       lib

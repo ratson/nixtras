@@ -2,7 +2,7 @@
   fetchFromGitHub,
   glib,
   procps,
-  inputs',
+  pkgs',
   ...
 }:
 
@@ -15,7 +15,7 @@ let
   };
 
 in
-inputs'.nixpkgs.legacyPackages.profile-sync-daemon.overrideAttrs (oldAttrs: {
+pkgs'.profile-sync-daemon.overrideAttrs (oldAttrs: {
   inherit src;
 
   version = "6.51";

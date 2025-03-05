@@ -1,32 +1,12 @@
 {
   "nodes": {
-    "conflake": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1739025932,
-        "narHash": "sha256-8BbSpXfJfy3R7XYX43dQeYZJ7K+IDCfGZb1KgRHN0Pg=",
-        "owner": "ratson",
-        "repo": "conflake",
-        "rev": "69b5b014b79ecd457aa698e383602b07d52683c4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ratson",
-        "repo": "conflake",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1738958807,
-        "narHash": "sha256-h0WKgHTLkjwjRNTkqByQquS7N/15SqIFMQ356Ww8uCA=",
+        "lastModified": 1741037377,
+        "narHash": "sha256-SvtvVKHaUX4Owb+PasySwZsoc5VUeTf1px34BByiOxw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e8d0b02af0958823c955aaab3c82b03f54411d91",
+        "rev": "02032da4af073d0f6110540c8677f16d4be0117f",
         "type": "github"
       },
       "original": {
@@ -38,7 +18,6 @@
     },
     "root": {
       "inputs": {
-        "conflake": "conflake",
         "nixpkgs": "nixpkgs"
       }
     }

@@ -2,7 +2,7 @@
   lib,
   buildNpmPackage,
   fetchurl,
-  outputs,
+  inputs,
   ...
 }:
 
@@ -12,7 +12,7 @@ let
   rev = "89a7b326ef18c75ad801ca93c780df8fd69ab644";
 in
 buildNpmPackage (
-  outputs.lib.npmArgs {
+  inputs.self.lib.npmArgs {
     inherit
       fetchurl
       lib
