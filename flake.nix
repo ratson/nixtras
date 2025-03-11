@@ -2,26 +2,24 @@
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
   outputs =
-    { nixpkgs, ... }@inputs:
+    { nixpkgs, self, ... }@inputs:
     let
       inherit (nixpkgs) lib;
 
-      forAllSystems = lib.genAttrs lib.systems.flakeExposed;
-
-      pkgsFor = forAllSystems (system: nixpkgs.legacyPackages.${system});
+      genSystems = lib.genAttrs lib.systems.flakeExposed;
+      pkgsFor = nixpkgs.legacyPackages;
     in
     {
       lib.npmArgs = import ./lib/npmArgs.nix;
 
-      packages = forAllSystems (
-        system:
+      overlays.default =
+        _: prev:
         let
-          pkgs = pkgsFor.${system};
           callArgs = {
             inherit inputs;
-            pkgs' = pkgs;
+            pkgs' = prev;
           };
-          packages = lib.makeScope pkgs.newScope (
+          packages = lib.makeScope prev.newScope (
             self:
             callArgs
             // lib.packagesFromDirectoryRecursive {
@@ -29,16 +27,15 @@
               directory = ./pkgs;
             }
           );
-        in
-        builtins.removeAttrs packages (
-          [
+          blacklist = [
             "callPackage"
             "newScope"
             "overrideScope"
             "packages"
-          ]
-          ++ builtins.attrNames callArgs
-        )
-      );
+          ] ++ builtins.attrNames callArgs;
+        in
+        builtins.removeAttrs packages blacklist;
+
+      packages = genSystems (system: self.overlays.default null pkgsFor.${system});
     };
 }
