@@ -6,7 +6,7 @@
 }:
 
 let
-  version = "3.0.0-alpha.9";
+  version = "3.0.0-dev";
 in
 (pkgs'.wails.override {
   webkitgtk_4_0 = webkitgtk_4_1;
@@ -20,12 +20,12 @@ in
       fetchFromGitHub {
         owner = "wailsapp";
         repo = "wails";
-        rev = "v${version}";
-        hash = "sha256-3sXR3dPpMU9S01/STTzKvju8Pvkq4+Ve7Fo2eMKsYN0=";
+        rev = "421b75ef21f09a5e303e167abdbe31495e57a3e2";
+        hash = "sha256-XMrddtlS36lDYlb6aE4K1A2nYogt7yRk/IQSRLg5CEk=";
       }
       + "/v3";
 
-    vendorHash = "sha256-yU/v0fDw7OoF51JkHzN8jFw3eG4nA42TD6kuuLF65jw=";
+    vendorHash = "sha256-PA2lJiMGRLjw607jcU3kiCS+tYsroDACfVBzo3IG+qk=";
 
     subPackages = [ "cmd/wails3" ];
 
