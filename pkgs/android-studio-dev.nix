@@ -19,6 +19,6 @@ in
 mkStudio {
   channel = "dev";
   pname = "android-studio-dev";
-  version = "2024.3.2.7";
-  sha256Hash = "sha256-RENjqoPdq3iYrF1q8QcjrXVBG8xNQrV+Vq9dj0Z/Im8=";
+  version = "2025.1.1.7";
+  sha256Hash = "sha256-RQOmTzmk0el8WXE3cnSBCnpginFk0bK45Aij7eil1uM=";
 }
